@@ -1,0 +1,17 @@
+{% import '_includes/forms' as _forms %}
+
+{% include '_components/fieldtypes/PlainText/settings' %}
+
+<div class="field">
+	<div class="heading">{{ 'Mode'|t }}</div>
+	{{- _forms.radioGroup({
+		id : 'mode',
+		name : 'mode',
+		value : settings.mode|default('plain'),
+		options : {
+			'plain' : 'Default'|t,
+			'disabled' : 'Disabled'|t,
+			'hidden' : 'Hidden'|t
+		}
+	}) -}}
+</div>

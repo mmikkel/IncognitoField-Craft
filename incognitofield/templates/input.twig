@@ -1,0 +1,46 @@
+{#
+/**
+ * Incognito Field plugin for Craft CMS
+ *
+ * IncognitoFieldFieldType HTML
+ *
+ * @author    Mats Mikkel Rummelhoff
+ * @copyright Copyright (c) 2016 Mats Mikkel Rummelhoff
+ * @link      http://mmikkel.no
+ * @package   IncognitoField
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as _forms %}
+
+{% set isHidden = settings.mode == 'hidden' %}
+{% set isDisabled = settings.mode == 'disabled' %}
+
+{% if isHidden %}
+<style>
+  #{{ id }}-field {
+    display: none;
+  }
+</style>
+{% endif %}
+
+{% set config = {
+	id: name,
+	name: name,
+	value: value,
+	class: 'nicetext'~(isDisabled ? ' disabled'),
+	maxlength: settings.maxLength,
+	showCharsLeft: true,
+    placeholder: settings.placeholder,
+	rows: settings.initialRows,
+	disabled : isDisabled
+} %}
+
+{% if settings.multiline %}
+	{{ _forms.textarea(config) }}
+{% elseif isHidden %}
+	{{ _forms.hidden(config) }}
+{% else %}
+	{{ _forms.text(config) }}
+{% endif %}
