@@ -16,6 +16,7 @@
 
 {% set isHidden = settings.mode == 'hidden' %}
 {% set isDisabled = settings.mode == 'disabled' %}
+{% set isReadOnly = settings.mode == 'readonly' %}
 
 {% if isHidden %}
 <style>
@@ -43,4 +44,14 @@
 	{{ _forms.hidden(config) }}
 {% else %}
 	{{ _forms.text(config) }}
+{% endif %}
+
+{% if isReadOnly %}
+    <script>
+        var temp = document.getElementById("{{ id }}");
+        temp.setAttribute("readonly", "readonly");
+        temp.style.background = "rgb(250,250,250)";
+        temp.style.boxShadow = "none";
+        temp.style.opacity = '0.8';
+    </script>
 {% endif %}
