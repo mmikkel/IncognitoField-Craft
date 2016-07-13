@@ -1,6 +1,6 @@
 # Incognito Field v. 1.0.1 for Craft CMS ![Craft 2.5](https://img.shields.io/badge/craft-2.5-red.svg?style=flat-square)
 
-**PlainText drop-in replacement, with the ability to be set as `disabled` or `hidden` or `readonly`**
+**PlainText drop-in replacement, with the ability to be set as `disabled`, `hidden` or `readonly`**
 
 ## What?
 
