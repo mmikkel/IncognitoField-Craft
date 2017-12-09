@@ -2,6 +2,8 @@
 
 **PlainText drop-in replacement, with the ability to be set as `disabled`, `hidden` or `readonly`**
 
+Looking for the Craft 3 version? [You're in luck, friend](https://github.com/mmikkel/IncognitoField-Craft3)
+
 ## What?
 
 Incognito Field adds a custom FieldType to Craft CMS, called _Incognito_. Incognito fields work exactly like regular PlainText fields, except that they can be configured to be disabled, readonly or hidden for element editor forms.
